@@ -1,0 +1,29 @@
+﻿<h3>Are you sure to Remove Course ?</h3>
+<div class="container">
+    @{ Html.BeginForm();}
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Label("Course Name")
+        </div>
+        <div class="col-lg-3">
+            <b>@ViewBag.Cname</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Label("Course Fees")
+        </div>
+        <div class="col-lg-3">
+            <b>@ViewBag.Fees</b>
+            @Html.Hidden("cid", (int)ViewBag.Cid)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-3">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+    </div>
+    @{Html.EndForm();}
+</div>

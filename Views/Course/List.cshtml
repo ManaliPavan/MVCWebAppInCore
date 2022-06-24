@@ -1,0 +1,26 @@
+﻿<h3>Course List</h3>
+<p>
+    @Html.ActionLink("Add New", "Create", "Course")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Cid</th>
+        <th>Cname</th>
+        <th>Fees</th>
+        <th>Action</th>
+    </tr>
+    @foreach (MVCWebApp.Models.Course course in ViewBag.CourseList)
+    {
+        <tr>
+            <td>@course.Cid</td>
+            <td>@course.Cname</td>
+            <td>@course.Fees</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { @cid = course.Cid }) |
+                @Html.ActionLink("Delete", "Delete", new { @cid = course.Cid })
+            </td>
+        </tr>
+    }
+</table>
+
+
